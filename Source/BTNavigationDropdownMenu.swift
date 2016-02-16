@@ -225,7 +225,7 @@ public class BTNavigationDropdownMenu: UIView {
         
         self.menuTitle = UILabel(frame: frame)
         self.menuTitle.text = title
-        self.menuTitle.textColor = self.menuTitleColor
+        self.menuTitle.textColor = UIColor.whiteColor()
         self.menuTitle.font = self.configuration.cellTextLabelFont
         self.menuTitle.textAlignment = self.configuration.cellTextLabelAlignment
         self.menuButton.addSubview(self.menuTitle)
@@ -254,7 +254,6 @@ public class BTNavigationDropdownMenu: UIView {
         
         self.tableView.selectRowAtIndexPathHandler = { (indexPath: Int) -> () in
             self.didSelectItemAtIndexHandler!(indexPath: indexPath)
-            self.setMenuTitle("\(items[indexPath])")
             self.hideMenu()
             self.layoutSubviews()
         }
@@ -537,7 +536,7 @@ class BTTableViewCell: UITableViewCell {
         cellContentFrame = CGRectMake(0, 0, (UIApplication.sharedApplication().keyWindow?.frame.width)!, self.configuration.cellHeight)
         self.contentView.backgroundColor = self.configuration.cellBackgroundColor
         self.selectionStyle = UITableViewCellSelectionStyle.None
-        self.textLabel!.textColor = self.configuration.cellTextLabelColor
+        self.textLabel!.textColor = UIColor.whiteColor()
         self.textLabel!.font = self.configuration.cellTextLabelFont
         self.textLabel!.textAlignment = self.configuration.cellTextLabelAlignment
         if self.textLabel!.textAlignment == .Center {
